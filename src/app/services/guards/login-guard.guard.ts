@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { CanActivate, Router } from '@angular/router';
 import { UsuarioService } from '../usuario/usuario.service';
 
+// Se agrega como parametro cuando se definen las rutas (pages.routes)
+
 @Injectable()
 export class LoginGuardGuard implements CanActivate {
 

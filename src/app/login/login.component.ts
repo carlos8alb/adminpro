@@ -32,6 +32,9 @@ export class LoginComponent implements OnInit {
     } else {
       this.recuerdame = false;
     }
+    if (this._usuarioService.estaLogueado()) {
+      this.router.navigate(['/dashboard']);   
+    }
   }
 
   googleInit(){
