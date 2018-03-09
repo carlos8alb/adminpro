@@ -13,10 +13,10 @@ declare const gapi: any;
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  
+
   email: string;
-  recuerdame: boolean = false;
-  auth2:any;
+  recuerdame: Boolean = false;
+  auth2: any;
 
   constructor(
     public router: Router,
@@ -33,11 +33,11 @@ export class LoginComponent implements OnInit {
       this.recuerdame = false;
     }
     if (this._usuarioService.estaLogueado()) {
-      this.router.navigate(['/dashboard']);   
+      this.router.navigate(['/dashboard']);
     }
   }
 
-  googleInit(){
+  googleInit() {
     gapi.load('auth2', () => {
       this.auth2 = gapi.auth2.init({
         client_id: '852071064686-pvacekl3c5ssi9rodvsfo45hgnha329q.apps.googleusercontent.com',
@@ -50,20 +50,20 @@ export class LoginComponent implements OnInit {
 
   attachSignin(element) {
     this.auth2.attachClickHandler (element, {}, (googleUser) => {
-      let token = googleUser.getAuthResponse().id_token;
+      const token = googleUser.getAuthResponse().id_token;
       this._usuarioService.loginGoogle(token)
             .subscribe((resp) => {
               window.location.href = '#/dashboard';
-            })
+            });
     });
   }
 
-  ingresar(forma: NgForm){
+  ingresar(forma: NgForm) {
     if (forma.invalid) {
       return;
     }
 
-    let usuario = new Usuario(null, forma.value.email, forma.value.password);
+    const usuario = new Usuario(null, forma.value.email, forma.value.password);
     this._usuarioService.login(usuario, forma.value.recuerdame)
       .subscribe(() => {
         this.router.navigate(['/dashboard']);

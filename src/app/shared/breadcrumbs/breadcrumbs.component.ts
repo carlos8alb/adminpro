@@ -15,7 +15,7 @@ export class BreadcrumbsComponent implements OnInit {
   constructor( 
     private router: Router,
     public title: Title,
-    public meta: Meta         
+    public meta: Meta
   ) { 
     
     this.getDataRoute()
