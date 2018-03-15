@@ -6,9 +6,11 @@ import { ModalUploadService } from '../components/modal-upload/modal-upload.serv
 import { SettingsService,
          SidebarService,
          SharedService,
-         UsuarioService,
          LoginGuardGuard,
-         SubirArchivoService
+         SubirArchivoService,
+         UsuarioService,
+         HospitalService,
+         MedicoService
 } from './service.index';
 
 @NgModule({
@@ -21,10 +23,12 @@ import { SettingsService,
     SettingsService,
     SidebarService,
     SharedService,
-    UsuarioService,
     LoginGuardGuard,
     SubirArchivoService,
-    ModalUploadService
+    ModalUploadService,
+    UsuarioService,
+    HospitalService,
+    MedicoService
   ]
 })
 export class ServiceModule { }

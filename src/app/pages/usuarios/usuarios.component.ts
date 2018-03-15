@@ -18,6 +18,7 @@ export class UsuariosComponent implements OnInit {
   currentPage: number;
   perPage: number = 5;
   cargando: boolean = true;
+  results: boolean = false;
 
   constructor(
     public _usuarioService: UsuarioService,
@@ -37,6 +38,8 @@ export class UsuariosComponent implements OnInit {
     this._usuarioService.cargarUsuarios(this.desde).subscribe((resp: any) => {
       this.totalRegistros = resp.total;
       this.usuarios = resp.usuarios;
+      this.cargando = false;
+      this.results = false;
 
       let countPages = this.totalRegistros / this.perPage;
 
@@ -56,7 +59,6 @@ export class UsuariosComponent implements OnInit {
         this.siguientes = false;
       }
 
-      this.cargando = false;
     });
   }
 
@@ -76,7 +78,7 @@ export class UsuariosComponent implements OnInit {
   }
 
   buscarUsuario(termino: string) {
-    if (termino.length <= 0) {
+    if (termino.trim().length <= 0) {
       this.cargarUsuarios();
       return;
     }
@@ -90,6 +92,11 @@ export class UsuariosComponent implements OnInit {
         this.cargando = false;
         this.anteriores = false;
         this.siguientes = false;
+        if (usuarios.length > 0) {
+          this.results = false;
+        } else {
+          this.results = true;
+        }
       });
   }
 

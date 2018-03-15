@@ -97,14 +97,13 @@ export class UsuarioService {
         }
 
         swal('Usuario actualizazdo', usuario.nombre, 'success');
-        return true;
+        return resp;
       });
   }
 
-  cambiarImagen( archivo: File, id: string )  {
+  cambiarImagen( archivo: File, id: string ) {
     this._subirArchivoService.subirArchivo(archivo, 'usuarios', id)
       .then((resp: any) => {
-        console.log(resp);
         this.usuario.img = resp.usuarioActualizado.img;
         swal('Imagen actualizada', this.usuario.nombre, 'success');
         this.guardarStorage(id, this.token, this.usuario);
@@ -115,7 +114,7 @@ export class UsuarioService {
   }
 
   cargarUsuarios(desde: number = 0) {
-    let url = URL_SERVICIOS + '/usuario?desde=0' + desde;
+    let url = URL_SERVICIOS + '/usuario?desde=' + desde;
     return this.http.get(url);
   }
 

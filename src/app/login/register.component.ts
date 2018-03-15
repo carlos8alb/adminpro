@@ -55,12 +55,11 @@ export class RegisterComponent implements OnInit {
       password: '123456',
       password2: '123456',
       condiciones: true
-    })
+    });
 
   }
 
-  registrarUsuario(){
-    
+  registrarUsuario() {
     if (this.forma.invalid) {
       return;
     }
@@ -76,10 +75,9 @@ export class RegisterComponent implements OnInit {
       this.forma.value.password
     );
 
-    this._usuarioService.crearUsuario(usuario).subscribe(resp => {      
+    this._usuarioService.crearUsuario(usuario).subscribe(resp => {
       this.router.navigate(['/login']);
     });
-    
 
   }
 

@@ -9,7 +9,7 @@ export class LoginGuardGuard implements CanActivate {
 
   constructor(
     public _usuarioService: UsuarioService,
-    public router: Router            
+    public router: Router
   ){
 
   }
