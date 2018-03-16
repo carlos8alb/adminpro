@@ -61,7 +61,7 @@ export class ModalUploadComponent implements OnInit {
             this._usuarioService.usuario.img = resp.usuarioActualizado.img;
             let usuario = resp.usuarioActualizado;
             let token = localStorage.getItem('token');
-            this._usuarioService.guardarStorage(usuario._id, token, usuario);
+            this._usuarioService.guardarStorage(usuario._id, token, usuario, this._usuarioService.menu);
           }
         }
         this._modalUploadService.notificacion.emit(resp);
