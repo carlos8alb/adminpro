@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MedicoService } from '../../services/service.index';
 import { Medico } from '../../../../models/medicos.model';
 
+import * as swal from 'sweetalert';
+
 @Component({
   selector: 'app-medicos',
   templateUrl: './medicos.component.html',

@@ -18,7 +18,7 @@
         <h4 class="card-title">Usuarios</h4>
         <table class="table table-hover" *ngIf="usuarios.length > 0">
           <tbody>
-            <tr [routerLink]="['/medicos']" *ngFor="let usuario of usuarios" class="pointer">
+            <tr [routerLink]="['/usuarios']" *ngFor="let usuario of usuarios" class="pointer">
               <td class="w70">
                 <img [src]="usuario.img | imagen: 'usuario'" class="img-50 img-circle">
               </td>

@@ -13,19 +13,19 @@ export class SettingsService {
     this.cargarAjustes();
   }
 
-  guardarAjustes(){
+  guardarAjustes() {
     localStorage.setItem('ajustes', JSON.stringify(this.ajustes));
   }
 
-  cargarAjustes(){
+  cargarAjustes() {
     if (localStorage.getItem('ajustes')) {
       this.ajustes = JSON.parse(localStorage.getItem('ajustes'));
       this.aplicarTema(this.ajustes.tema);
     }
   }
 
-  aplicarTema(tema: string){
-    let url = 'assets/css/colors/'+ tema +'.css';
+  aplicarTema(tema: string) {
+    let url = 'assets/css/colors/' + tema + '.css';
     this._document.getElementById('tema').setAttribute('href', url);
 
     this.ajustes.tema = tema;

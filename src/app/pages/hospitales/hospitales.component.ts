@@ -3,6 +3,8 @@ import { HospitalService } from '../../services/service.index';
 import { Hospital } from '../../../../models/hospitales.model';
 import { ModalUploadService } from '../../components/modal-upload/modal-upload.service';
 
+import * as swal from 'sweetalert';
+
 @Component({
   selector: 'app-hospitales',
   templateUrl: './hospitales.component.html',

@@ -11,7 +11,6 @@ import { ChartsModule } from 'ng2-charts';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProgessComponent } from './progess/progess.component';
 import { Graficas1Component } from './graficas1/graficas1.component';
-import { PagesComponent } from './pages.component';
 
 // Pipe
 import { PipesModule } from '../pipes/pipes.module';
@@ -23,7 +22,6 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
-import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { HospitalesComponent } from './hospitales/hospitales.component';
 import { MedicosComponent } from './medicos/medicos.component';
@@ -35,7 +33,6 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
         DashboardComponent,
         ProgessComponent,
         Graficas1Component,
-        PagesComponent,
         IncrementadorComponent,
         GraficoDonaComponent,
         AccountSettingsComponent,
@@ -43,7 +40,6 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
         RxjsComponent,
         ProfileComponent,
         UsuariosComponent,
-        ModalUploadComponent,
         HospitalesComponent,
         MedicosComponent,
         MedicoComponent,
@@ -52,8 +48,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     exports: [
         DashboardComponent,
         ProgessComponent,
-        Graficas1Component,
-        PagesComponent
+        Graficas1Component
     ],
     imports: [
         CommonModule,
